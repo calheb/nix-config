@@ -19,3 +19,6 @@ opt.clipboard = "unnamedplus"
 
 -- wrap indicator
 opt.colorcolumn = "100"
+
+opt.ignorecase = true
+opt.smartcase = true

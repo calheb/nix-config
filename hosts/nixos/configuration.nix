@@ -120,58 +120,20 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     firefox
-    nautilus # file manager
+    nautilus
     waybar
     wofi
     mako
     alacritty
     bibata-cursors
-    keepassxc
-    signal-desktop
-    discord
-    vscode
-    hyprpaper # wallpaper renderer
-    pavucontrol # pulse audio GUI
-    godot
-    nodejs
-    goxlr-utility
-    gimp
-    grimblast # screenshot utility
-    fastfetch
-    git
-    starship
-    mullvad
-    qbittorrent
+    hyprpaper
+    pavucontrol
+    grimblast
     tree
     ghostty
-    xournalpp
-    libreoffice
-    spotify
-    unzip
-
-    # LSPs
-    lua-language-server
-    clang-tools # clangd
-    typescript-language-server
-    vscode-langservers-extracted # cssls, html, jsonls
-    bash-language-server
-    haskell-language-server
-    pyright
-    nixd
-    omnisharp-roslyn
-
-    # Formatters
-    stylua
-    prettier
-    shfmt
-    haskellPackages.fourmolu
-    python3Packages.black
-    nixpkgs-fmt
-    csharpier
   ];
 
   fonts.packages = with pkgs; [
