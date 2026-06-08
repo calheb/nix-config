@@ -72,6 +72,27 @@
     };
   };
 
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+        size = 14.0;
+        normal = {
+          family = "FiraCode Nerd Font Mono";
+          style = "Regular";
+        };
+        bold = {
+          family = "FiraCode Nerd Font Mono";
+          style = "Bold";
+        };
+        italic = {
+          family = "FiraCode Nerd Font Mono";
+          style = "Italic";
+        };
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Caleb Hebert";
@@ -84,6 +105,5 @@
 
   home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/hypr".source = ./config/hypr;
-  home.file.".config/alacritty".source = ./config/alacritty;
 }
 
