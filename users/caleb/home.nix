@@ -47,6 +47,20 @@
     csharpier
   ];
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      splash = false;
+      preload = [
+        "/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
+      ];
+      wallpaper = [
+        "DP-1,/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
+        "DP-2,/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
+      ];
+    };
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -95,15 +109,15 @@
 
   programs.git = {
     enable = true;
-    userName = "Caleb Hebert";
-    userEmail = "caleb@linux.com";
-    extraConfig = {
+    settings = {
+      user.name = "Caleb Hebert";
+      user.email = "caleb@linux.com";
       init.defaultBranch = "main";
       core.editor = "nvim";
     };
   };
 
   home.file.".config/nvim".source = ./config/nvim;
-  home.file.".config/hypr".source = ./config/hypr;
+  home.file.".config/hypr/hyprland.lua".source = ./config/hypr/hyprland.lua;
 }
 

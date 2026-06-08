@@ -272,6 +272,6 @@ hl.window_rule({
 -------------------
 hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
-	hl.exec_cmd("waybar & hyprpaper & firefox")
+	hl.exec_cmd("waybar & firefox")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 end)
