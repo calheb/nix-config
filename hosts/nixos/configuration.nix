@@ -134,6 +134,7 @@
     grimblast
     tree
     ghostty
+    goxlr-utility
   ];
 
   fonts.packages = with pkgs; [
@@ -172,6 +173,9 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  # Enable the GoXLR daemon service
+
+  services.goxlr-utility.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

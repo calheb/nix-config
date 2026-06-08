@@ -16,7 +16,6 @@
     vscode
     godot
     nodejs
-    goxlr-utility
     gimp
     fastfetch
     mullvad
@@ -63,6 +62,16 @@
 
   programs.starship.enable = true;
 
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      theme = "Catppuccin Mocha";
+      gtk-single-instance = false;
+
+      # font-family = "Fira Code Nerd Font";
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Caleb Hebert";
@@ -76,6 +85,5 @@
   home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/alacritty".source = ./config/alacritty;
-  home.file.".config/ghostty".source = ./config/ghostty;
 }
 

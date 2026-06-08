@@ -1,9 +1,0 @@
-# ~/.config/ghostty/config
-
-theme = Catppuccin Mocha
-
-# font-family = Fira Code Nerd Font
-
-# disable single instance mode so config changes apply upon program restart
-gtk-single-instance = false
-
