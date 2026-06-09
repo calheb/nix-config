@@ -1,6 +1,4 @@
 {
-  description = "caleb's nixos config";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -24,3 +22,4 @@
     };
   };
 }
+
