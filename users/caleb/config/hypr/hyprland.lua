@@ -267,11 +267,27 @@ hl.window_rule({
 	no_focus = true,
 })
 
+-- Godot debug game window
+hl.window_rule({
+	match = { initial_title = "trench-run \\(DEBUG\\)" },
+	float = true,
+	size = "1280 720",
+	center = true,
+})
+
+-- Exported game binary
+hl.window_rule({
+	match = { class = "trench-run" }, -- TODO: Find a way to target this without hard coding the name of the game.
+	float = true,
+	size = "1280 720",
+	center = true,
+})
+
 -------------------
 ---- AUTOSTART ----
 -------------------
 hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
-	hl.exec_cmd("waybar & firefox")
+	hl.exec_cmd("waybar & hyprpaper & firefox")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 end)

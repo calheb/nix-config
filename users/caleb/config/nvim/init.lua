@@ -21,8 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = { { import = "plugins" } },
 	install = { colorscheme = { "catppuccin" } },
+	--install = { colorscheme = { "gruber-darker" } },
 	checker = { enabled = true },
 	rocks = { enabled = false }, -- disable luarocks, using Nix instead
+	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- ~/.local/share/nvim/lazy-lock.json
 })
-
-vim.cmd.colorscheme("catppuccin")

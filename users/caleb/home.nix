@@ -24,7 +24,9 @@
     libreoffice
     spotify
     unzip
-    eza
+    eza # ls replacement
+    obs-studio
+    vlc
 
     # LSPs
     lua-language-server
@@ -55,8 +57,14 @@
         "/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
       ];
       wallpaper = [
-        "DP-1,/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
-        "DP-2,/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png"
+        {
+          monitor = "DP-1";
+          path = "/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png";
+        }
+        {
+          monitor = "DP-2";
+          path = "/home/caleb/Pictures/wallpapers/nix-wallpaper-dracula.png";
+        }
       ];
     };
   };
@@ -80,9 +88,11 @@
     enable = true;
     settings = {
       theme = "Catppuccin Mocha";
+      #theme = "Gruber Darker";
       gtk-single-instance = false;
 
       # font-family = "Fira Code Nerd Font";
+      font-family = "Iosevka Nerd Font";
     };
   };
 
