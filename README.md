@@ -42,7 +42,7 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 ```
 <br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/301a1f25-cff6-407b-a7a7-80304b29eba1" /><br><br>
-<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/6a44f959-ba66-4ca1-804a-da7e35199e5a" /><br><br>
+<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/80afa56d-23b3-49f1-8060-a6a57669bf08" /><br><br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/434ff757-9942-43d1-ad6c-929907736412" /><br>
 
 ## Usage
