@@ -22,6 +22,8 @@ hl.monitor({
 	scale = 1.60,
 })
 
+hl.workspace_rule({ workspace = "1", monitor = "DP-2" })
+
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -281,6 +283,6 @@ hl.window_rule({
 -------------------
 hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
-	hl.exec_cmd("waybar & hyprpaper & firefox")
+	hl.exec_cmd("hyprpaper & firefox")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 end)

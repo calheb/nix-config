@@ -13,5 +13,18 @@
     '';
   };
 
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = true;
+      lua.disabled = true;
+      custom.nix = {
+        command = "echo -n ''";
+        when = "true";
+        format = "[$symbol]($style) ";
+        symbol = " ";
+        style = "bold blue";
+      };
+    };
+  };
 }

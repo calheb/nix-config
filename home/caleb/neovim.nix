@@ -174,6 +174,30 @@
       markdown-preview-nvim
 
       {
+        plugin = nvim-treesitter-legacy.withPlugins (p: with p; [
+          lua
+          nix
+          bash
+          c
+          cpp
+          python
+          haskell
+          typescript
+          javascript
+          css
+          html
+          json
+        ]);
+        type = "lua";
+        config = /* lua */ ''
+          require("nvim-treesitter.configs").setup({
+            highlight = { enable = true },
+            indent = { enable = true },
+          })
+        '';
+      }
+
+      {
         plugin = nvim-lspconfig;
         type = "lua";
         config = /* lua */ ''

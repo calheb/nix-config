@@ -14,9 +14,11 @@
     { self, nixpkgs, ... }:
     let
       inherit (nixpkgs.lib) genAttrs nixosSystem;
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+      pkgsFor = system: nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.nixos = nixosSystem {
+      nixosConfigurations.lemma = nixosSystem {
         system = "x86_64-linux";
 
         specialArgs = {
@@ -24,12 +26,18 @@
         };
 
         modules = [
-          ./hosts/nixos
+          ./hosts/lemma
         ];
       };
 
-      formatter = genAttrs [ "x86_64-linux" "aarch64-linux" ] (
-        system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style
-      );
+      devShells = genAttrs systems (system: (pkgsFor system).mkShell {
+        packages = with (pkgsFor system); [
+          deadnix
+          statix
+          nixfmt-rfc-style
+        ];
+      });
+
+      formatter = genAttrs systems (system: (pkgsFor system).nixfmt-rfc-style);
     };
 }

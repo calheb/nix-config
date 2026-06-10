@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./configuration.nix
-    ./home-manager.nix
-    ./theme.nix
+    ../../modules/nixos/home-manager.nix
+    ./system-theme.nix
   ];
 }

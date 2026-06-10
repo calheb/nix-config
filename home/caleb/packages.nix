@@ -9,7 +9,7 @@
     godot
     nodejs
     gimp
-    fastfetch
+    microfetch
     mullvad
     qbittorrent
     xournalpp
@@ -19,5 +19,10 @@
     eza # ls replacement
     obs-studio
     vlc
+    gcc
+    playerctl
+    swaylock
+    wlogout
+    pavucontrol
   ];
 }

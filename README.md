@@ -7,9 +7,9 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 
 ## Structure
 ```
-❯ tree -L 3 ~/nix-config/
-
+~ 
 ❯ tree ~/nix-config
+
 /home/caleb/nix-config
 ├── config
 │   └── hypr
@@ -26,37 +26,39 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 │       ├── packages.nix
 │       ├── shell.nix
 │       ├── terminals.nix
-│       └── theme.nix
+│       ├── user-theme.nix
+│       └── waybar.nix
 ├── hosts
-│   └── nixos
+│   └── lemma
 │       ├── configuration.nix
 │       ├── default.nix
 │       ├── hardware-configuration.nix
-│       ├── home-manager.nix
-│       └── theme.nix
+│       └── system-theme.nix
+├── LICENSE
+├── modules
+│   └── nixos
+│       └── home-manager.nix
 └── README.md
 ```
 <br>
-<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/3365ff74-aff4-4104-a0c5-5706722bb7ff" /><br><br>
-<img width="3769" height="2441" alt="Image" src="https://github.com/user-attachments/assets/5a7347c9-b5c4-4d75-b8ff-fd30fbac8ffc" /><br><br>
-<img width="1873" height="1209" alt="Image" src="https://github.com/user-attachments/assets/d83a6fb1-c4eb-499a-bb1f-f5f51c60c09b" /><br>
+<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/301a1f25-cff6-407b-a7a7-80304b29eba1" /><br><br>
+<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/6a44f959-ba66-4ca1-804a-da7e35199e5a" /><br><br>
+<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/434ff757-9942-43d1-ad6c-929907736412" /><br>
 
 ## Usage
 
-**try it in a VM**
+Try out my system configuration in a VM:
 ```bash
 git clone https://github.com/calheb/nix-config && cd nix-config
-nixos-rebuild build-vm --flake .#nixos
+nixos-rebuild build-vm --flake .#lemma
 ./result/bin/run-nixos-vm
 ```
 
 ## TODO
-- [ ] Migrate Hyprland to Home Manager.
-- [ ] Configure Waybar.
-
+- [ ] Migrate Hyprland config to Home Manager.
+- [ ] Update treesitter to non-legacy and preserve syntax highlighting.
 
 [NixOS]: https://nixos.org/
 [Nix Flakes]: https://wiki.nixos.org/wiki/Flakes/
 [Home Manager]: https://nix-community.github.io/home-manager/
 [Hyprland]: https://hyprland.org/
-

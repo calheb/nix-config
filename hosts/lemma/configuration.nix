@@ -10,7 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-c80b3b9f-f84f-41ee-826a-adc6aa6a626d".device = "/dev/disk/by-uuid/c80b3b9f-f84f-41ee-826a-adc6aa6a626d";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "lemma";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -177,6 +177,15 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
+  nix.settings.trusted-users = [ "root" "caleb" ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave

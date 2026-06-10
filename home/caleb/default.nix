@@ -7,6 +7,7 @@
     ./packages.nix
     ./shell.nix
     ./terminals.nix
-    ./theme.nix
+    ./user-theme.nix
+    ./waybar.nix
   ];
 }
