@@ -37,7 +37,7 @@ nixos-rebuild build-vm --flake .#nixos
 ```
 
 ## TODO
-- [ ] Migrate programs from home.nix to individual modules.
+- [ ] Migrate user program configurations from home.nix to individual modules.
 - [ ] Migrate Neovim to Home Manager.
 - [ ] Migrate Hyprland to Home Manager.
 - [ ] Configure Waybar.
