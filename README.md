@@ -1,13 +1,17 @@
 <p align="left">
   <img height=100 src="https://raw.githubusercontent.com/NixOS/nixos-artwork/9d2cdedd73d64a068214482902adea3d02783ba8/logo/nix-snowflake-colours.svg">
 </p>
-<h1>nix-config</h1>
+
+# nix-config
+
+<p>
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
+</p>
 
 My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 
 ## Structure
 ```
-~ 
 ❯ tree ~/nix-config
 
 /home/caleb/nix-config
@@ -40,7 +44,9 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 │       └── home-manager.nix
 └── README.md
 ```
-<br>
+
+## Screenshots
+
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/301a1f25-cff6-407b-a7a7-80304b29eba1" /><br><br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/80afa56d-23b3-49f1-8060-a6a57669bf08" /><br><br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/434ff757-9942-43d1-ad6c-929907736412" /><br>
