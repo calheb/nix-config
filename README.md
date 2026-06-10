@@ -9,18 +9,32 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 ```
 ❯ tree -L 3 ~/nix-config/
 
-/home/caleb/nix-config/
+❯ tree ~/nix-config
+/home/caleb/nix-config
+├── config
+│   └── hypr
+│       └── hyprland.lua
 ├── flake.lock
 ├── flake.nix
-├── hosts/
-│   └── nixos/
+├── home
+│   └── caleb
+│       ├── core.nix
+│       ├── default.nix
+│       ├── desktop.nix
+│       ├── git.nix
+│       ├── neovim.nix
+│       ├── packages.nix
+│       ├── shell.nix
+│       ├── terminals.nix
+│       └── theme.nix
+├── hosts
+│   └── nixos
 │       ├── configuration.nix
-│       └── hardware-configuration.nix
-├── README.md
-└── users/
-    └── caleb/
-        ├── config/
-        └── home.nix
+│       ├── default.nix
+│       ├── hardware-configuration.nix
+│       ├── home-manager.nix
+│       └── theme.nix
+└── README.md
 ```
 <br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/3365ff74-aff4-4104-a0c5-5706722bb7ff" /><br><br>
@@ -37,8 +51,6 @@ nixos-rebuild build-vm --flake .#nixos
 ```
 
 ## TODO
-- [ ] Migrate user program configurations from home.nix to individual modules.
-- [ ] Migrate Neovim to Home Manager.
 - [ ] Migrate Hyprland to Home Manager.
 - [ ] Configure Waybar.
 

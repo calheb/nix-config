@@ -1,7 +1,3 @@
--- hyprland.lua
--- Migrated from hyprland.conf and corrected against the official 0.55 example:
--- https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.lua
-
 hl.config({
 	xwayland = {
 		force_zero_scaling = true,
@@ -11,18 +7,18 @@ hl.config({
 ------------------
 ---- MONITORS ----
 ------------------
--- DP-2 on left, DP-1 on right
+-- DP-2 on right, DP-1 on left
 hl.monitor({
 	output = "DP-2",
 	mode = "3840x2560@59.98",
-	position = "0x0",
+	position = "2400x0",
 	scale = 1.60,
 })
 
 hl.monitor({
 	output = "DP-1",
 	mode = "3840x2560@59.98",
-	position = "2400x0",
+	position = "0x0",
 	scale = 1.60,
 })
 
@@ -194,9 +190,6 @@ hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 
 -- Move window (vim keys)
--- NOTE: directional window.move is the one line I could not 100% confirm against
--- the official example (it only shows window.move with a workspace). If these four
--- error or misbehave, check the Dispatchers wiki for the directional move form.
 hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))

@@ -5,12 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -100,7 +94,7 @@
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true; # launch via UWSM (proper start-hyprland wrapper + systemd session)
+    withUWSM = true;
     xwayland.enable = true;
   };
 
