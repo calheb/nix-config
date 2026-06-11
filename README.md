@@ -5,7 +5,7 @@
 # nix-config
 
 <p>
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" height=20 width=100% />
 </p>
 
 My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
