@@ -20,10 +20,11 @@
     obs-studio
     vlc
     gcc
+    valgrind
+    gnumake
     playerctl
     swaylock
     wlogout
     pavucontrol
-    gnumake
   ];
 }
