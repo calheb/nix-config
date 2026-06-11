@@ -7,6 +7,10 @@
 
   programs.home-manager.enable = true;
 
+  home.file.".config/nixpkgs/config.nix".text = ''
+    { allowUnfree = true; }
+  '';
+
   # TODO: migrate this once the Home Manager Hyprland lua module is stable.
   home.file.".config/hypr/hyprland.lua".source = ../../config/hypr/hyprland.lua;
 }
