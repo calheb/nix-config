@@ -79,6 +79,7 @@
     isNormalUser = true;
     description = "caleb";
     extraGroups = [ "networkmanager" "wheel" ];
+    initialPassword = "test";
     packages = with pkgs; [
       #  thunderbird
     ];
