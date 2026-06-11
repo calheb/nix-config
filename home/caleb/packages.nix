@@ -24,5 +24,6 @@
     swaylock
     wlogout
     pavucontrol
+    gnumake
   ];
 }
