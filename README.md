@@ -57,12 +57,14 @@ Try out my system configuration in a VM:
 ```bash
 git clone https://github.com/calheb/nix-config && cd nix-config
 nixos-rebuild build-vm --flake .#lemma
-./result/bin/run-nixos-vm
+./result/bin/run-lemma-vm
 ```
 
 ## TODO
 - [ ] Migrate Hyprland config to Home Manager.
 - [ ] Update treesitter to non-legacy and preserve syntax highlighting.
+- [ ] Add home server config to hosts/.
+- [ ] Add laptop config to hosts/.
 
 [NixOS]: https://nixos.org/
 [Nix Flakes]: https://wiki.nixos.org/wiki/Flakes/
