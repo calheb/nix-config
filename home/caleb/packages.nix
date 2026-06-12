@@ -26,5 +26,6 @@
     swaylock
     wlogout
     pavucontrol
+    gnome-terminal
   ];
 }
