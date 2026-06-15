@@ -147,8 +147,9 @@ hl.gesture({
 })
 
 hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = -0.5,
+	name = "kensington-slimblade-pro(2.4ghz-receiver)-kensington-slimblade-pro-trackball(2.4ghz-receiver)",
+	sensitivity = 0.7,
+	accel_profile = "flat",
 })
 
 ---------------------
