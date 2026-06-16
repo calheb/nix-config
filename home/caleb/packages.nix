@@ -27,5 +27,6 @@
     wlogout
     pavucontrol
     gnome-terminal
+    bear
   ];
 }

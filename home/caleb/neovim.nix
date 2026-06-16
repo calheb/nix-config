@@ -174,7 +174,7 @@
       markdown-preview-nvim
 
       {
-        plugin = nvim-treesitter-legacy.withPlugins (p: with p; [
+        plugin = nvim-treesitter.withPlugins (p: with p; [
           lua
           nix
           bash

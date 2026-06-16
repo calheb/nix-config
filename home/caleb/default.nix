@@ -2,6 +2,7 @@
   imports = [
     ./core.nix
     ./desktop.nix
+    ./emacs.nix
     ./git.nix
     ./neovim.nix
     ./packages.nix
