@@ -39,10 +39,15 @@
       (setq use-short-answers t)          ; y/n instead of yes/no
       (global-display-line-numbers-mode 1)
       (electric-pair-mode 1)              ; auto-close parens/brackets
+      (global-auto-revert-mode 1)        ; reload files changed on disk
 
       ;; Indentation
       (setq-default indent-tabs-mode nil)
       (setq-default tab-width 2)
+
+      ;; Clipboard integration
+      (setq select-enable-clipboard t)
+      (setq mouse-drag-copy-region t)
 
       ;; Disable auto-save and backups
       (setq auto-save-default nil)
