@@ -7,7 +7,7 @@
       user.name = "Caleb Hebert";
       user.email = "caleb@linux.com";
       init.defaultBranch = "main";
-      core.editor = "nvim";
+      core.editor = "emacs";
     };
   };
 }
