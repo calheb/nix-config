@@ -25,6 +25,7 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 │       ├── core.nix
 │       ├── default.nix
 │       ├── desktop.nix
+│       ├── emacs.nix
 │       ├── git.nix
 │       ├── neovim.nix
 │       ├── packages.nix
