@@ -17,7 +17,7 @@
       which-key
 
       # nix syntax
-      nix-mode
+      nix-ts-mode
 
       # git
       magit
@@ -28,6 +28,10 @@
       # completion popup
       corfu
 
+      # hover docs popup
+      eldoc-box
+      markdown-mode
+
       # modeline
       doom-modeline
       nerd-icons
@@ -36,6 +40,9 @@
       git-gutter
       git-gutter-fringe
       fringe-helper
+
+      # tree-sitter grammars
+      treesit-grammars.with-all-grammars
     ];
 
     extraConfig = ''
@@ -45,26 +52,20 @@
       (scroll-bar-mode -1)
 
       ;; Quality of life
-      (setq inhibit-startup-screen t)
-      (setq ring-bell-function 'ignore)
-      (setq use-short-answers t)          ; y/n instead of yes/no
+      (setq inhibit-startup-screen t
+            ring-bell-function 'ignore
+            use-short-answers t            ; y/n instead of yes/no
+            select-enable-clipboard t
+            mouse-drag-copy-region t
+            auto-save-default nil
+            make-backup-files nil
+            confirm-kill-processes nil)
+      (setq-default indent-tabs-mode nil
+                    tab-width 2)
       (global-display-line-numbers-mode 1)
-      (electric-pair-mode 1)              ; auto-close parens/brackets
-      (global-auto-revert-mode 1)        ; reload files changed on disk
-
-      ;; Indentation
-      (setq-default indent-tabs-mode nil)
-      (setq-default tab-width 2)
-
-      ;; Clipboard integration
-      (setq select-enable-clipboard t)
-      (setq mouse-drag-copy-region t)
-
-      ;; Disable auto-save and backups
-      (setq auto-save-default nil)
-      (setq make-backup-files nil)
-      (setq confirm-kill-processes nil)
-      (add-hook 'kill-emacs-hook (lambda () (save-some-buffers t)))
+      (electric-pair-mode 1)               ; auto-close parens/brackets
+      (global-auto-revert-mode 1)          ; reload files changed on disk
+      (advice-add 'save-buffers-kill-emacs :before (lambda (&rest _) (save-some-buffers t)))
 
       ;; 100-column marker
       (setq-default display-fill-column-indicator-column 100)
@@ -85,8 +86,8 @@
       (which-key-mode 1)
 
       ;; C style
-      (setq c-default-style "k&r")
-      (setq c-basic-offset 4)
+      (setq c-ts-mode-indent-style 'k&r)
+      (setq c-ts-mode-indent-offset 4)
 
       ;; corfu: completion popup
       (global-corfu-mode 1)
@@ -95,24 +96,57 @@
       (setq corfu-auto-prefix 2)
       (setq corfu-quit-no-match t)
 
+      ;; eldoc-box: floating hover popup
+      (add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-mode)
+      (defun my/eldoc-box-position (width _height)
+        (let* ((edges (window-body-pixel-edges))
+               (body-left (nth 0 edges))
+               (body-top (nth 1 edges))
+               (col-100-x (+ body-left (* (+ 100 (line-number-display-width)) (frame-char-width)))))
+          (pcase-let ((`(,_ ,_ ,offset-t) eldoc-box-offset))
+            (cons (+ col-100-x (* 4 offset-t) 8)
+                  (+ body-top offset-t)))))
+      (setq eldoc-box-position-function #'my/eldoc-box-position)
+      (defun my/eldoc-box-cycle ()
+        (interactive)
+        (if eldoc-box-hover-at-point-mode
+            (progn (eldoc-box-hover-at-point-mode -1)
+                   (eldoc-box-hover-mode 1))
+          (progn (eldoc-box-hover-mode -1)
+                 (eldoc-box-hover-at-point-mode 1))))
+      (global-set-key (kbd "<f8>") #'my/eldoc-box-cycle)
+
+      ;; woman under cursor
+      (global-set-key (kbd "C-c K")
+                      (lambda ()
+                        (interactive)
+                        (woman (thing-at-point 'symbol t))))
+
+      ;; tree-sitter: remap major modes to their ts variants
+      (setq major-mode-remap-alist
+            '((c-mode      . c-ts-mode)
+              (c++-mode    . c++-ts-mode)
+              (sh-mode     . bash-ts-mode)
+              (python-mode . python-ts-mode)
+              (nix-mode    . nix-ts-mode)))
+
       ;; eglot
-      (add-hook 'c-mode-hook 'eglot-ensure)
-      (add-hook 'c-mode-hook (lambda ()
-                               (add-hook 'before-save-hook #'eglot-format-buffer nil t)))
+      (add-hook 'c-ts-mode-hook 'eglot-ensure)
+      (add-hook 'c-ts-mode-hook (lambda ()
+                                  (add-hook 'before-save-hook #'eglot-format-buffer nil t)))
       (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
       (with-eval-after-load 'eglot
         (add-to-list 'eglot-server-programs
-                     '((c-mode c++-mode) . ("clangd"
-                                            "--clang-tidy"
-                                            "--completion-style=detailed"
-                                            "--header-insertion=never"))))
+                     '((c-ts-mode c++-ts-mode) . ("clangd"
+                                                   "--clang-tidy"
+                                                   "--completion-style=detailed"
+                                                   "--header-insertion=never"))))
 
       ;; doom-modeline
-      (require 'doom-modeline)
-      (doom-modeline-mode 1)
+      (global-set-key (kbd "<f9>") #'doom-modeline-mode)
 
       ;; git-gutter-fringe with custom bitmaps
-      (require 'git-gutter-fringe)
+      (require 'fringe-helper)
       (global-git-gutter-mode 1)
       (fringe-helper-define 'git-gutter-fr:added '(center repeated)
         "XXXXXXXX"

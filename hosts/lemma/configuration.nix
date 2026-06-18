@@ -56,6 +56,15 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
+  security.pam.u2f = {
+    enable = true;
+    settings.cue = true;
+    control = "sufficient";
+  };
+  security.pam.services.sudo.u2fAuth = true;
+  security.pam.services.login.u2fAuth = true;
+  security.pam.services.greetd.u2fAuth = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
