@@ -266,7 +266,7 @@ hl.window_rule({
 
 -- Godot debug game window
 hl.window_rule({
-	match = { initial_title = "trench-run \\(DEBUG\\)" },
+	match = { initial_title = "haunted-estate \\(DEBUG\\)" },
 	float = true,
 	size = "1280 720",
 	center = true,
@@ -274,7 +274,7 @@ hl.window_rule({
 
 -- Exported game binary
 hl.window_rule({
-	match = { class = "trench-run" }, -- TODO: Find a way to target this without hard coding the name of the game.
+	match = { class = "haunted-estate" }, -- TODO: Find a way to target this without hard coding the name of the game.
 	float = true,
 	size = "1280 720",
 	center = true,
