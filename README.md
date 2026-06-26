@@ -8,8 +8,16 @@
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" height=20 width=100% />
 </p>
 
-My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
+My personal development environment.
 
+- **Editor:** [Emacs]
+- **Shell:** [Bash] | [conch]
+- **Prompt:** [Starship]
+- **Terminal:** [Ghostty]
+- **OS:** [NixOS] | [Home Manager] | [Hyprland]
+- **Theme:** [Catppuccin] | [gruber-darker]
+
+<!--
 ## Structure
 ```
 ❯ tree ~/nix-config
@@ -45,11 +53,12 @@ My [NixOS] configuration with [Nix Flakes], [Home Manager], and [Hyprland].
 │       └── home-manager.nix
 └── README.md
 ```
+-->
 
 ## Screenshots
 
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/301a1f25-cff6-407b-a7a7-80304b29eba1" /><br><br>
-<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/80afa56d-23b3-49f1-8060-a6a57669bf08" /><br><br>
+<img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/ab0a6d90-1e3e-4606-b5c2-804778dc6194" /><br><br>
 <img width="3840" height="2560" alt="Image" src="https://github.com/user-attachments/assets/434ff757-9942-43d1-ad6c-929907736412" /><br>
 
 ## Usage
@@ -62,8 +71,7 @@ nixos-rebuild build-vm --flake .#lemma
 ```
 
 ## TODO
-- [ ] Migrate Hyprland config to Home Manager.
-- [ ] Update treesitter to non-legacy and preserve syntax highlighting.
+- [ ] Migrate Hyprland config to Home Manager once Lua integration is more mature.
 - [ ] Add home server config to hosts/.
 - [ ] Add laptop config to hosts/.
 
@@ -71,3 +79,10 @@ nixos-rebuild build-vm --flake .#lemma
 [Nix Flakes]: https://wiki.nixos.org/wiki/Flakes/
 [Home Manager]: https://nix-community.github.io/home-manager/
 [Hyprland]: https://hyprland.org/
+[Catppuccin]: https://catppuccin.com/
+[gruber-darker]: https://github.com/rexim/gruber-darker-theme/
+[Bash]: https://www.gnu.org/software/bash/
+[conch]: https://github.com/calheb/conch/
+[Emacs]: https://www.gnu.org/software/emacs/
+[Starship]: https://github.com/starship/starship/
+[Ghostty]: https://github.com/ghostty-org/ghostty/
