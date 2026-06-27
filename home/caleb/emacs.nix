@@ -143,6 +143,7 @@
                                                    "--header-insertion=never"))))
 
       ;; doom-modeline
+      (doom-modeline-mode 1)
       (global-set-key (kbd "<f9>") #'doom-modeline-mode)
 
       ;; git-gutter-fringe with custom bitmaps
