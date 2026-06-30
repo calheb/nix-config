@@ -102,6 +102,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -139,6 +145,7 @@
     tree
     ghostty
     goxlr-utility
+    chromium
   ];
 
   fonts.packages = with pkgs; [
@@ -178,6 +185,11 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   # Enable the GoXLR daemon service
+
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", MODE="0666", TAG+="uaccess"
+  '';
 
   services.goxlr-utility.enable = true;
 
