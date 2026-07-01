@@ -70,11 +70,6 @@ nixos-rebuild build-vm --flake .#lemma
 ./result/bin/run-lemma-vm
 ```
 
-## TODO
-- [ ] Migrate Hyprland config to Home Manager once Lua integration is more mature.
-- [ ] Add home server config to hosts/.
-- [ ] Add laptop config to hosts/.
-
 [NixOS]: https://nixos.org/
 [Nix Flakes]: https://wiki.nixos.org/wiki/Flakes/
 [Home Manager]: https://nix-community.github.io/home-manager/
