@@ -7,6 +7,7 @@
       theme = "Catppuccin Mocha";
       #theme = "Gruber Darker";
       gtk-single-instance = false;
+      confirm-close-surface = false;
       # font-family = "Fira Code Nerd Font";
       font-family = "Iosevka Nerd Font";
       font-size = 16.0;
